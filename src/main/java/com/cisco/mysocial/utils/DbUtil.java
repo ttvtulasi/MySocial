@@ -11,12 +11,12 @@ public class DbUtil {
 
 	/**
 	 * Method to retrieve a mongo database client from the thread local storage
-	 * 
+	 *
 	 * @return
 	 */
 	public static Datastore getMongoDB() {
 		if (mongoTL.get() == null) {
-			MongoClientURI connectionString = new MongoClientURI("mongodb://localhost:27017");
+			MongoClientURI connectionString = new MongoClientURI("mongodb://172.17.42.1:27017");
 			MongoClient mongoClient = new MongoClient(connectionString);
 			
 			Morphia morphia = new Morphia();
